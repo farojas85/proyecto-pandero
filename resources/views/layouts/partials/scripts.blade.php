@@ -17,3 +17,5 @@
 <script src="{{ asset('app-assets/js/scripts/dashboard-ecommerce.js') }}"></script>
 <!-- END PAGE LEVEL JS-->
 @yield('page-scripts')
+
+
