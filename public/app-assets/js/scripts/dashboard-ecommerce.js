@@ -1,6 +1,6 @@
 // Dashboard - eCommerce
 //----------------------
-(function(window, document, $) {
+$(function()  {
    //Sample toast
    setTimeout(function() {
       M.toast({ html: "Hey! I am a toast." });
@@ -430,4 +430,4 @@
       },
       options: SLOption
    });
-})(window, document, jQuery);
+});

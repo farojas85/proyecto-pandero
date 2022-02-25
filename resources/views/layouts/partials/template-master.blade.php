@@ -11,7 +11,7 @@
     <meta name="keywords" content="materialize, admin template, dashboard template, sistema pandero">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="FarbeSofts">
-    <title>@yield('title') | Pandero</title>
+    <title>@yield('title')Pandero</title>
     <link rel="apple-touch-icon" href="{{ asset('app-assets/images/favicon/apple-touch-icon-152x152.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/favicon/favicon-32x32.png') }}">
     @include('layouts.partials.estilos')

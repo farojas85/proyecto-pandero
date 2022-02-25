@@ -1,28 +1,33 @@
-<li class="active bold">
+
+<li class="{{ (Request::is('dashboard') ) ? 'active open' : ''}} bold ">
     <a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)">
         <i class="material-icons">settings_input_svideo</i>
         <span class="menu-title" data-i18n="Dashboard">Dashboard</span>
-        <span class="badge badge pill orange float-right mr-10">3</span>
+        {{-- <span class="badge badge pill orange float-right mr-10">3</span> --}}
     </a>
     <div class="collapsible-body">
         <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-            <li><a href="dashboard-modern.html"><i class="material-icons">radio_button_unchecked</i><span
-                        data-i18n="Modern">Modern</span></a>
+            <li class="{{ (Request::is('dashboard') ) ? 'active' : ''}}">
+                <a class="{{ (Request::is('dashboard') ) ? 'active' : ''}}" href="dashboard-ecommerce.html">
+                    <i class="material-icons">radio_button_unchecked</i>
+                    <span data-i18n="eCommerce">Dashboard 1</span></a>
             </li>
-            <li class="active"><a class="active" href="dashboard-ecommerce.html"><i
-                        class="material-icons">radio_button_unchecked</i><span
-                        data-i18n="eCommerce">eCommerce</span></a>
+            {{-- <li><a href="dashboard-modern.html"><i class="material-icons">radio_button_unchecked</i><span
+                        data-i18n="Modern">Modern</span></a>
             </li>
             <li><a href="dashboard-analytics.html"><i
                         class="material-icons">radio_button_unchecked</i><span
                         data-i18n="Analytics">Analytics</span></a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </li>
-<li class="bold"><a class="collapsible-header waves-effect waves-cyan "
-        href="JavaScript:void(0)"><i class="material-icons">dvr</i><span class="menu-title"
-            data-i18n="Templates">Templates</span></a>
+<li class="bold">
+    <a class="collapsible-header waves-effect waves-cyan "
+        href="JavaScript:void(0)">
+        <i class="material-icons">dvr</i>
+        <span class="menu-title" data-i18n="Templates">Templates</span>
+    </a>
     <div class="collapsible-body">
         <ul class="collapsible collapsible-sub" data-collapsible="accordion">
             <li><a class="collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)"><i

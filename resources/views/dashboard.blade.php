@@ -347,7 +347,6 @@
     </div> --}}
 
     @section('vendor-scripts')
-    <script src="{{ asset('app-assets/vendors/chartjs/chart.min.js') }}"></script>
     @endsection
 </x-master-layout>
 

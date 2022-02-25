@@ -102,12 +102,12 @@
                         </a>
                     </li>
                     <li>
-                        <a class="grey-text text-darken-1" href="{{ route('logout') }}"
+                        <a class="grey-text text-darken-1" href="logout"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <i class="material-icons">keyboard_tab</i>
                             Salir
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <form id="logout-form" action="logout" method="POST" style="display: none;">
                             @csrf
                         </form>
                     </li>
