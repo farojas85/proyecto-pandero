@@ -2,7 +2,7 @@ const addChildScript = (urlChild,IdParent) =>{
     var script = document.createElement('script')
     var url =urlChild;
     script.type ="text/javascript"
-    script.src = 'app-assets/vendors/'+url
+    script.src = 'app-assets/'+url
     $(IdParent).append(script)
 }
 
@@ -11,7 +11,7 @@ const addChildStyle = (urlChild,IdParent) =>{
     var url =urlChild;
     link.type ="text/css"
     link.rel="styleSheet"
-    link.href = 'app-assets/vendors/'+url
+    link.href = 'app-assets/'+url
     $(IdParent).append(link)
 }
 

@@ -1,25 +1,6 @@
 <template>
-    <div class="breadcrumbs-inline pt-3 pb-1" id="breadcrumbs-wrapper">
-        <!-- Search for small screen-->
-        <div class="container">
-            <div class="row">
-                <div class="col breadcrumbs-left">
-                    <h5 class="breadcrumbs-title mt-0 mb-0 display-inline hide-on-small-and-down"><span>Dashboard 1</span></h5>
-                    <ol class="breadcrumbs mb-0">
-                        <li class="breadcrumb-item">
-                            <a href="/dashboard">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="#">Dashboard</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            Dashboard 1
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
+    <content-header-sub :titleSub="titleSub" :titlePrincipal="titlePrincipal"
+        :titleCard="titleCard"></content-header-sub>
     <div class="section">
         <!--card stats start-->
         <div id="card-stats" class="pt-0">
@@ -323,15 +304,32 @@
 </template>
 
 <script>
+    import { ref } from 'vue'
+    import { useRoute } from 'vue-router'
     import helper  from '../helpers'
+    import ContentHeaderSub from '../partials/ContendHeaderSubs.vue'
 
     export default {
+        components:{
+            ContentHeaderSub
+        },
         setup() {
+            const ruta = useRoute()
 
+            const titleCard = ref('Dashboard 1')
+
+            const titlePrincipal = ref('Dashboard')
+
+            const titleSub = ref( titleCard)
+
+            return {
+                ruta, titlePrincipal, titleCard, titleSub
+            }
         },
         mounted(){
             helper.defineTitle("Dashboard")
-            helper.addChildScript("chartjs/chart.min.js",'#vendor-scripts')
+            helper.addChildScript("vendors/chartjs/chart.min.js",'#vendor-scripts')
+            helper.addChildScript("js/scripts/dashboard-ecommerce.min.js",'#page-scripts')
         }
     }
 </script>

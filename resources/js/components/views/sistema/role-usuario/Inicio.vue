@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-content">
             <h4 class="card-title">
-                Listado Usuarios
+                Listado Roles / Usuarios
             </h4>
         </div>
     </div>

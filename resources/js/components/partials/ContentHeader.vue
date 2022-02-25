@@ -1,0 +1,40 @@
+<template>
+    <div class="breadcrumbs-inline pt-3 pb-1" id="breadcrumbs-wrapper">
+        <!-- Search for small screen-->
+        <div class="container">
+            <div class="row">
+                <div class="col breadcrumbs-left">
+                    <h5 class="breadcrumbs-title mt-0 mb-0 display-inline hide-on-small-and-down">
+                        <span>{{ title }}</span>
+                    </h5>
+                    <ol class="breadcrumbs mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="/dashboard">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            {{ ruta.name }}
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import { toRefs } from 'vue'
+
+    export default {
+        props:{
+            ruta:{},
+            title: String
+        },
+        setup(props) {
+            const { title, ruta } = toRefs(props)
+
+            return {
+
+            }
+        },
+    }
+</script>

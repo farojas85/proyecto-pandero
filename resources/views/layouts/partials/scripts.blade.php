@@ -15,7 +15,8 @@
 <script src="app-assets/js/scripts/customizer.min.js"></script>
 <!-- END THEME  JS-->
 <!-- BEGIN PAGE LEVEL JS-->
-<script src="app-assets/js/scripts/dashboard-ecommerce.min.js"></script>
+<script src="app-assets/js/page-scripts.js" id="page-scripts"></script>
+{{-- <script src="app-assets/js/scripts/dashboard-ecommerce.min.js"></script> --}}
 <!-- END PAGE LEVEL JS-->
 @yield('page-scripts')
 

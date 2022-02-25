@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css"
     href="app-assets/css/pages/dashboard.min.css">
 <!-- END: Page Level CSS-->
+<link rel="stylesheet" type="text/css"
+    href="app-assets/css/page-styles.css" id="page-styles">
 @yield('page-styles')
 <!-- BEGIN: Custom CSS-->
 <link rel="stylesheet" type="text/css" href="app-assets/css/custom/custom.min.css">
