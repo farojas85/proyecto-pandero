@@ -10,21 +10,20 @@
                 </div>
                 <ul class="navbar-list right">
                     <li class="dropdown-language"><a class="waves-effect waves-block waves-light translation-button"
-                            href="#" data-target="translation-dropdown"><span
-                                class="flag-icon flag-icon-gb"></span></a></li>
-                    <li class="hide-on-med-and-down"><a
-                            class="waves-effect waves-block waves-light toggle-fullscreen"
+                            href="#" data-target="translation-dropdown"><span class="flag-icon flag-icon-gb"></span></a>
+                    </li>
+                    <li class="hide-on-med-and-down"><a class="waves-effect waves-block waves-light toggle-fullscreen"
                             href="javascript:void(0);"><i class="material-icons">settings_overscan</i></a></li>
                     <li class="hide-on-large-only search-input-wrapper"><a
                             class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i
                                 class="material-icons">search</i></a></li>
-                    <li><a class="waves-effect waves-block waves-light notification-button"
-                            href="javascript:void(0);" data-target="notifications-dropdown"><i
-                                class="material-icons">notifications_none<small
+                    <li><a class="waves-effect waves-block waves-light notification-button" href="javascript:void(0);"
+                            data-target="notifications-dropdown"><i class="material-icons">notifications_none<small
                                     class="notification-badge">5</small></i></a></li>
                     <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);"
                             data-target="profile-dropdown"><span class="avatar-status avatar-online"><img
-                                    src="{{ asset('app-assets/images/avatar/avatar-7.png') }}" alt="avatar"><i></i></span></a></li>
+                                    src="{{ asset('app-assets/images/avatar/avatar-7.png') }}"
+                                    alt="avatar"><i></i></span></a></li>
                     <li><a class="waves-effect waves-block waves-light sidenav-trigger" href="#"
                             data-target="slide-out-right"><i class="material-icons">format_indent_increase</i></a>
                     </li>
@@ -80,19 +79,38 @@
                 </ul>
                 <!-- profile-dropdown-->
                 <ul class="dropdown-content" id="profile-dropdown">
-                    <li><a class="grey-text text-darken-1" href="user-profile-page.html"><i
-                                class="material-icons">person_outline</i> Profile</a></li>
-                    <li><a class="grey-text text-darken-1" href="app-chat.html"><i
-                                class="material-icons">chat_bubble_outline</i> Chat</a></li>
-                    <li><a class="grey-text text-darken-1" href="page-faq.html"><i
-                                class="material-icons">help_outline</i>
-                            Help</a></li>
+                    <li>
+                        <a class="grey-text text-darken-1" href="user-profile-page.html">
+                            <i class="material-icons">person_outline</i> Mi Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="grey-text text-darken-1" href="app-chat.html">
+                            <i class="material-icons">chat_bubble_outline</i> Chat
+                        </a>
+                    </li>
+                    <li>
+                        <a class="grey-text text-darken-1" href="page-faq.html">
+                            <i class="material-icons">help_outline</i>
+                            Help
+                        </a>
+                    </li>
                     <li class="divider"></li>
-                    <li><a class="grey-text text-darken-1" href="user-lock-screen.html"><i
-                                class="material-icons">lock_outline</i> Lock</a></li>
-                    <li><a class="grey-text text-darken-1" href="user-login.html"><i
-                                class="material-icons">keyboard_tab</i>
-                            Logout</a></li>
+                    <li>
+                        <a class="grey-text text-darken-1" href="user-lock-screen.html">
+                            <i class="material-icons">lock_outline</i> Lock
+                        </a>
+                    </li>
+                    <li>
+                        <a class="grey-text text-darken-1" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <i class="material-icons">keyboard_tab</i>
+                            Salir
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
                 </ul>
             </div>
             <nav class="display-none search-sm">
@@ -119,8 +137,8 @@
     <li class="auto-suggestion"><a class="collection-item" href="#">
             <div class="display-flex">
                 <div class="display-flex align-item-center flex-grow-1">
-                    <div class="avatar"><img src="app-assets/images/icon/pdf-image.png" width="24"
-                            height="30" alt="sample image"></div>
+                    <div class="avatar"><img src="app-assets/images/icon/pdf-image.png" width="24" height="30"
+                            alt="sample image"></div>
                     <div class="member-info display-flex flex-column"><span class="black-text">Two new item
                             submitted</span><small class="grey-text">Marketing Manager</small></div>
                 </div>
@@ -130,8 +148,8 @@
     <li class="auto-suggestion"><a class="collection-item" href="#">
             <div class="display-flex">
                 <div class="display-flex align-item-center flex-grow-1">
-                    <div class="avatar"><img src="app-assets/images/icon/doc-image.png" width="24"
-                            height="30" alt="sample image"></div>
+                    <div class="avatar"><img src="app-assets/images/icon/doc-image.png" width="24" height="30"
+                            alt="sample image"></div>
                     <div class="member-info display-flex flex-column"><span class="black-text">52 Doc file
                             Generator</span><small class="grey-text">FontEnd Developer</small></div>
                 </div>
@@ -141,8 +159,8 @@
     <li class="auto-suggestion"><a class="collection-item" href="#">
             <div class="display-flex">
                 <div class="display-flex align-item-center flex-grow-1">
-                    <div class="avatar"><img src="app-assets/images/icon/xls-image.png" width="24"
-                            height="30" alt="sample image"></div>
+                    <div class="avatar"><img src="app-assets/images/icon/xls-image.png" width="24" height="30"
+                            alt="sample image"></div>
                     <div class="member-info display-flex flex-column"><span class="black-text">25 Xls File
                             Uploaded</span><small class="grey-text">Digital Marketing Manager</small></div>
                 </div>
@@ -152,8 +170,8 @@
     <li class="auto-suggestion"><a class="collection-item" href="#">
             <div class="display-flex">
                 <div class="display-flex align-item-center flex-grow-1">
-                    <div class="avatar"><img src="app-assets/images/icon/jpg-image.png" width="24"
-                            height="30" alt="sample image"></div>
+                    <div class="avatar"><img src="app-assets/images/icon/jpg-image.png" width="24" height="30"
+                            alt="sample image"></div>
                     <div class="member-info display-flex flex-column"><span class="black-text">Anna
                             Strong</span><small class="grey-text">Web Designer</small></div>
                 </div>

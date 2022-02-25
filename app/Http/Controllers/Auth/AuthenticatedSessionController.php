@@ -20,6 +20,16 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
+    // public function username()
+    // {
+    //     return 'name';
+    // }
+
+    // protected function credentials(Request $request)
+    // {
+    //     return $request->only($this->username(), 'password');
+    // }
+
     /**
      * Handle an incoming authentication request.
      *

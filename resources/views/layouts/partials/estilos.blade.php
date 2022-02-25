@@ -6,9 +6,9 @@
 @yield('vendor-styles')
 <!-- BEGIN: Page Level CSS-->
 <link rel="stylesheet" type="text/css"
-    href="{{ asset('app-assets/css/themes/vertical-modern-menu-template/materialize.css') }}">
+    href="{{ asset('app-assets/css/themes/vertical-menu-nav-dark-template/materialize.css') }}">
 <link rel="stylesheet" type="text/css"
-    href="{{ asset('app-assets/css/themes/vertical-modern-menu-template/style.css') }}">
+    href="{{ asset('app-assets/css/themes/vertical-menu-nav-dark-template/style.css') }}">
 <link rel="stylesheet" type="text/css"
     href="{{ asset('app-assets/css/pages/dashboard.css') }}">
 <!-- END: Page Level CSS-->
