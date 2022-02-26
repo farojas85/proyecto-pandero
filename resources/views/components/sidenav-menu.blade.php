@@ -31,3 +31,9 @@
         <span class="menu-title" data-i18n="Dashboard">Sistema</span>
     </a>
 </li>
+<li class="bold {{ (Request::is('configuracion') ) ? 'active' : ''}}">
+    <a class="waves-effect waves-cyan {{ (Request::is('configuracion') ) ? 'active' : ''}} " href="configuracion">
+        <i class="material-icons">settings</i>
+        <span class="menu-title" data-i18n="Settings">Configuraciones</span>
+    </a>
+</li>

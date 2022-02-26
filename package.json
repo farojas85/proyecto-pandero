@@ -26,6 +26,7 @@
         "popper": "^1.0.1",
         "resolve-url-loader": "^5.0.0",
         "rtlcss": "^3.5.0",
+        "vform": "^2.1.2",
         "vue": "^3.2.31",
         "vue-loader": "^17.0.0",
         "vue-router": "^4.0.12"
