@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
+import Form from 'vform'
 
 export default function useTipoDocumentos() {
     const tipoDocumentos = ref([])
@@ -18,7 +19,22 @@ export default function useTipoDocumentos() {
         tipoDocumento.value = respuesta.data.data
     }
 
+    const storeTipoDocumento =async(form) => {
+        errors.value=''
+        try
+        {
+            await form.post('api/tipo-documentos')
+        } catch(e) {
+            if(e.response.status === 422) {
+                errors.value = e.response.data.errors
+            }
+        }
+
+    }
+
     return {
-        tipoDocumentos, tipoDocumento, obtenerTipoDocumentos, obtenerTipoDocumento
+        errors, tipoDocumentos, tipoDocumento,
+        obtenerTipoDocumentos, obtenerTipoDocumento,
+        storeTipoDocumento
     }
 }

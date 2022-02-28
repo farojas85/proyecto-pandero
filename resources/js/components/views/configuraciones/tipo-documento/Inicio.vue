@@ -151,6 +151,7 @@
 
             const nuevo = () => {
                 limpiar()
+                form.estadoCrud ='nuevo'
                 $('.modal').modal();
                 $('#modal-title').html('Nuevo Tipo Documento')
                 $('#modal-form').modal('open')
