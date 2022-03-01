@@ -88,7 +88,7 @@
         <div class="modal-content">
             <h4 id="modal-title">Modal Header</h4>
             <div id="modal-body">
-                <tipo-form :form="form"></tipo-form>
+                <tipo-form :estadoCrud="estadoCrud" :getTipo="tipoDocumentos"></tipo-form>
             </div>
         </div>
         <!-- <div class="modal-footer">
@@ -99,7 +99,7 @@
 </template>
 <script>
     import helper from '../../../helpers'
-    import { ref, onMounted, reactive } from 'vue'
+    import { ref, onMounted, onUpdated, onActivated } from 'vue'
     import Form from 'vform'
 
     import useTipoDocumentos from '../../../../composables/tipo-documentos'
@@ -127,38 +127,36 @@
             helper.addChildScript('js/scripts/advance-ui-modals.js','#page-scripts')
 
             document.body.classList.add("app-page")
+
+            //this.obtenerTipoDocumentos()
         },
         setup() {
-            const { tipoDocumentos, obtenerTipoDocumentos } = useTipoDocumentos()
+            const {tipoDocumentos, obtenerTipoDocumentos } = useTipoDocumentos()
 
-            const initialState =  new Form({
-                id:'',
-                tipo:'',
-                nombreCorto:'',
-                nombreLargo:'',
-                longitud:'',
-                estado:true,
-                estadoCrud:''
-            })
-
-            const form = reactive({ ...initialState})
+            var estadoCrud = 'nuevo'
 
             onMounted(obtenerTipoDocumentos)
+            //const form = reactive({ ...initialState})
 
-            const limpiar = () => {
-                Object.assign(form,initialState)
-            }
+            // const limpiar = () => {
+            //     Object.assign(form,initialState)
+            // }
 
             const nuevo = () => {
-                limpiar()
-                form.estadoCrud ='nuevo'
+
                 $('.modal').modal();
                 $('#modal-title').html('Nuevo Tipo Documento')
                 $('#modal-form').modal('open')
             }
 
+            const cargarTipoDocumentos = async() => {
+                let respuesta = await axios.get('/api/tipo-documentos')
+                tipoDocumentos.value = respuesta.data.data
+            }
+
             return {
-                tipoDocumentos, nuevo, form, limpiar
+                tipoDocumentos, nuevo,estadoCrud, obtenerTipoDocumentos,
+                cargarTipoDocumentos
             }
         },
     }

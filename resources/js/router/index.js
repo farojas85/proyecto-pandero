@@ -7,7 +7,7 @@ import Configuracion from '../components/views/configuraciones/Inicio'
 const routes = [
     { path: '/dashboard', name:'Dashboard 1', component: Dashboard},
     { path: '/sistema', name:'Sistema', component: Sistema},
-    { path: '/configuracion', name: 'Configuración', component: Configuracion}
+    { path: '/configuracion', name: 'Configuracion', component: Configuracion}
 ]
 
 export default createRouter({

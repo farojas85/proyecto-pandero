@@ -13,7 +13,7 @@ class StoreTipoDocumentoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class StoreTipoDocumentoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'tipo' => ['required'],
+            'nombre_corto' => ['required','string:191'],
+            'nombre_largo' => ['required','string:191'],
+            'longitud' => ['required'],
         ];
     }
+
 }

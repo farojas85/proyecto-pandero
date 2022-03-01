@@ -5,8 +5,9 @@
 <!-- END: VENDOR CSS-->
 @yield('vendor-styles')
 <!-- BEGIN: Page Level CSS-->
-<link rel="stylesheet" type="text/css" href="app-assets/css/themes/vertical-menu-nav-dark-template/materialize.min.css">
-<link rel="stylesheet" type="text/css" href="app-assets/css/themes/vertical-menu-nav-dark-template/style.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/themes/vertical-modern-menu-template/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/themes/vertical-modern-menu-template/style.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-modern.css">
 <link rel="stylesheet" type="text/css" href="app-assets/css/page-styles.css" id="page-styles">
 <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard.min.css">
 <!-- END: Page Level CSS-->

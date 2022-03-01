@@ -23,4 +23,4 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/{any}', [PanderoController::class,'index'])->where('any', '.*');
+Route::get('/{any}', [PanderoController::class,'index'])->middleware(['auth'])->where('any', '.*');

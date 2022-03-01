@@ -28,7 +28,8 @@ class TipoDocumentoController extends Controller
      */
     public function store(StoreTipoDocumentoRequest $request)
     {
-        //
+        $tipoDocumento = TipoDocumento::create($request->validated());
+        return new TipoDocumentoResource($tipoDocumento);
     }
 
     /**
