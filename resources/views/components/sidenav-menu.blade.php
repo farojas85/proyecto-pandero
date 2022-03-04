@@ -10,15 +10,9 @@
             <li class="{{ (Request::is('dashboard') ) ? 'active' : ''}}">
                 <a class="{{ (Request::is('dashboard') ) ? 'active' : ''}}" href="dashboard">
                     <i class="material-icons">radio_button_unchecked</i>
-                    <span data-i18n="eCommerce">Dashboard 1</span></a>
+                    <span data-i18n="eCommerce">Dashboard 1</span>
+                </a>
             </li>
-            {{-- <li><a href="dashboard-modern.html"><i class="material-icons">radio_button_unchecked</i><span
-                        data-i18n="Modern">Modern</span></a>
-            </li>
-            <li><a href="dashboard-analytics.html"><i
-                        class="material-icons">radio_button_unchecked</i><span
-                        data-i18n="Analytics">Analytics</span></a>
-            </li> --}}
         </ul>
     </div>
 </li>

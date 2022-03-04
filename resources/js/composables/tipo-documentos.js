@@ -11,7 +11,7 @@ export default function useTipoDocumentos() {
     const obtenerTipoDocumentos = async() => {
         let respuesta = await axios.get('/api/tipo-documentos')
         tipoDocumentos.value = respuesta.data.data
-        //return respuesta.data.data
+
     }
 
     const obtenerTipoDocumento = async(id) => {
@@ -26,6 +26,8 @@ export default function useTipoDocumentos() {
             await form.post('api/tipo-documentos')
             form.clear()
             form.reset()
+            await router.push({name:'TipoDocumentos'})
+
         } catch(e) {
             if(e.response.status === 422) {
                 errors.value = e.response.data.errors

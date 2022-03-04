@@ -3,6 +3,6 @@
 */
 $(function() {
     $('.modal').modal();
-    $('#modal3').modal('open');
-    $('#modal3').modal('close');
-  });
+    //$('#modal3').modal('open');
+    $('#modal-form').modal('close');
+});

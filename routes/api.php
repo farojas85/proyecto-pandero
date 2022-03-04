@@ -19,6 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('users',UserController::class);
+Route::apiResource('usuarios',UserController::class);
 Route::apiResource('tipo-documentos',TipoDocumentoController::class);
+
+
+//RUTAS ADMIN
+require __DIR__.'/rutasAdmin.php';
 

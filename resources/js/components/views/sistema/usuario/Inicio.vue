@@ -41,19 +41,43 @@
 </template>
 
 <script>
-    import useUsuarios from '../../../../composables/users'
+    import helper from '../../../helpers'
+    import { obtenerUsuarios} from '../../../../composables/usuarios'
     import { onMounted } from 'vue'
 
     export default {
-        setup() {
-            const { usuarios, obtenerUsuarios } = useUsuarios()
-
-            onMounted(obtenerUsuarios)
-
+        data() {
             return {
-                usuarios
+                show_usuarios:'habilitados',
+                usuarios:[],
+                total:0,
+                form: new form({
+                    id:'',
+                    name:'',
+                    email:'',
+                    password:''
+                }),
+                paginacion:5,
+                buscar:''
             }
         },
+        mounted(){
+            helper.defineTitle('Usuarios')
+        },
+        created(){
+            this.listarUsuarios()
+        },
+        methods:{
+            listarUsuarios(page=1){
+                this.usuarios = obtenerUsuarios(page,this.paginacion,this.show_usuarios,page,this.buscar,this.buscar)
+                this.total = usuarios.data.total;
+                console.log(this.usuarios)
+            },
+            habilitados() {
+                this.show_usuarios="habilitados";
+                this.listarUsuarios()
+            }
+        }
 
     }
 </script>

@@ -1,4 +1,6 @@
 <template>
+    <content-header-sub :titleCard="titleCard" :titleSub="titleSub"
+        :titlePrincipal="titlePrincipal"></content-header-sub>
     <h4 class="card-title">
         Listado Tipo Documentos
     </h4>
@@ -10,11 +12,11 @@
             </a>
         </div>
         <div class="invoice-create-btn">
-            <a href="#" class="btn waves-effect waves-light green invoice-create border-round z-depth-4"
+            <button type="button"  class="btn waves-effect waves-light green invoice-create border-round z-depth-4"
                @click="nuevo">
                 <i class="material-icons">add</i>
                 <span class="hide-on-small-only">Nuevo Tipo Documento</span>
-            </a>
+            </button>
         </div>
         <div class="filter-btn">
             <!-- Dropdown Trigger -->
@@ -88,25 +90,22 @@
         <div class="modal-content">
             <h4 id="modal-title">Modal Header</h4>
             <div id="modal-body">
-                <tipo-form :estadoCrud="estadoCrud" :getTipo="tipoDocumentos"></tipo-form>
+                <tipo-form :estadoCrud="estadoCrud"  ></tipo-form>
             </div>
         </div>
-        <!-- <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        </div> -->
     </div>
 </template>
 <script>
+    import { ref, onMounted} from 'vue'
+    import { useRoute } from 'vue-router'
     import helper from '../../../helpers'
-    import { ref, onMounted, onUpdated, onActivated } from 'vue'
-    import Form from 'vform'
-
+    import ContendHeaderSub from '../../../../components/partials/ContendHeaderSubs.vue'
     import useTipoDocumentos from '../../../../composables/tipo-documentos'
     import TipoForm from './Form.vue'
 
     export default {
         components:{
+            ContendHeaderSub,
             TipoForm
         },
         mounted(){
@@ -114,8 +113,8 @@
             helper.addChildStyle(
                 'vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css',
                 '#vendor-styles')
-            helper.addChildStyle('endors/data-tables/css/dataTables.checkboxes.css')
-            helper.addChildStyle('css/pages/app-invoice.css','#page-styles')
+            helper.addChildStyle('endors/data-tables/css/dataTables.checkboxes.min.css')
+            helper.addChildStyle('css/pages/app-invoice.min.css','#page-styles')
 
             helper.addChildScript(
                 'vendors/data-tables/js/jquery.dataTables.min.js','#vendor-scripts')
@@ -127,36 +126,34 @@
             helper.addChildScript('js/scripts/advance-ui-modals.js','#page-scripts')
 
             document.body.classList.add("app-page")
-
+            helper.defineTitle('Tipo Documentos')
             //this.obtenerTipoDocumentos()
         },
         setup() {
             const {tipoDocumentos, obtenerTipoDocumentos } = useTipoDocumentos()
 
-            var estadoCrud = 'nuevo'
+            const ruta = useRoute()
+
+            const modeloActual = ref('Tipo Documentos')
+
+            const titleCard = ref('Configuración Tipo Documentos')
+
+            const titlePrincipal = ref(ruta.name)
+
+            const titleSub = ref(modeloActual)
+
+            const estadoCrud = 'nuevo'
 
             onMounted(obtenerTipoDocumentos)
-            //const form = reactive({ ...initialState})
-
-            // const limpiar = () => {
-            //     Object.assign(form,initialState)
-            // }
 
             const nuevo = () => {
-
                 $('.modal').modal();
                 $('#modal-title').html('Nuevo Tipo Documento')
                 $('#modal-form').modal('open')
             }
 
-            const cargarTipoDocumentos = async() => {
-                let respuesta = await axios.get('/api/tipo-documentos')
-                tipoDocumentos.value = respuesta.data.data
-            }
-
             return {
-                tipoDocumentos, nuevo,estadoCrud, obtenerTipoDocumentos,
-                cargarTipoDocumentos
+                tipoDocumentos, nuevo,estadoCrud, obtenerTipoDocumentos
             }
         },
     }

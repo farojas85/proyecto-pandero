@@ -1,5 +1,5 @@
 <template>
-    <div class="breadcrumbs-inline pt-3 pb-1" id="breadcrumbs-wrapper">
+    <div class="breadcrumbs-dark pt-3 pb-1" id="breadcrumbs-wrapper">
         <!-- Search for small screen-->
         <div class="container">
             <div class="row">

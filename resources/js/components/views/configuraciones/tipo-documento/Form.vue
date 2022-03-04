@@ -59,13 +59,12 @@
     import Form from 'vform'
     export default {
         props:{
-            estadoCrud: String,
-            getTipo: Array
+            estadoCrud: String
         },
         components:{
             HasError
         },
-        setup(props) {
+        setup(props,context) {
             const { errors, storeTipoDocumento, obtenerTipoDocumentos } = useTipoDocumentos()
 
             const { estadoCrud,getTipo } = toRefs(props)
@@ -85,12 +84,10 @@
                 if(form.estadoCrud == 'nuevo') {
                     saveTipoDocumento()
                     $('#modal-form').modal('close')
-                    getTipo()
                 }
             }
             const saveTipoDocumento = async () => {
                 let respuesta = await storeTipoDocumento(form)
-
             }
 
             return {

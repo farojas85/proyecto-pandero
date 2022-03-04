@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Http\Resources\UserResource;
-use Illuminate\Http\Request;
+use App\Http\Traits\UsuarioTrait;
 
 class UserController extends Controller
 {
+    use UsuarioTrait;
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +19,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return UserResource::collection(User::all());
+        return UserResource::collection(User::paginate(10));
     }
+
 
     /**
      * Store a newly created resource in storage.

@@ -10,20 +10,21 @@
                 </div>
                 <ul class="navbar-list right">
                     <li class="dropdown-language"><a class="waves-effect waves-block waves-light translation-button"
-                            href="#" data-target="translation-dropdown"><span class="flag-icon flag-icon-gb"></span></a>
-                    </li>
-                    <li class="hide-on-med-and-down"><a class="waves-effect waves-block waves-light toggle-fullscreen"
+                            href="#" data-target="translation-dropdown"><span
+                                class="flag-icon flag-icon-gb"></span></a></li>
+                    <li class="hide-on-med-and-down"><a
+                            class="waves-effect waves-block waves-light toggle-fullscreen"
                             href="javascript:void(0);"><i class="material-icons">settings_overscan</i></a></li>
                     <li class="hide-on-large-only search-input-wrapper"><a
                             class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i
                                 class="material-icons">search</i></a></li>
-                    <li><a class="waves-effect waves-block waves-light notification-button" href="javascript:void(0);"
-                            data-target="notifications-dropdown"><i class="material-icons">notifications_none<small
+                    <li><a class="waves-effect waves-block waves-light notification-button"
+                            href="javascript:void(0);" data-target="notifications-dropdown"><i
+                                class="material-icons">notifications_none<small
                                     class="notification-badge">5</small></i></a></li>
                     <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);"
                             data-target="profile-dropdown"><span class="avatar-status avatar-online"><img
-                                    src="{{ asset('app-assets/images/avatar/avatar-7.png') }}"
-                                    alt="avatar"><i></i></span></a></li>
+                                    src="app-assets/images/avatar/avatar-7.png" alt="avatar"><i></i></span></a></li>
                     <li><a class="waves-effect waves-block waves-light sidenav-trigger" href="#"
                             data-target="slide-out-right"><i class="material-icons">format_indent_increase</i></a>
                     </li>
@@ -130,6 +131,7 @@
         </nav>
     </div>
 </header>
+<!-- END: Header-->
 <ul class="display-none" id="default-search-main">
     <li class="auto-suggestion-title"><a class="collection-item" href="#">
             <h6 class="search-title">FILES</h6>
@@ -137,8 +139,8 @@
     <li class="auto-suggestion"><a class="collection-item" href="#">
             <div class="display-flex">
                 <div class="display-flex align-item-center flex-grow-1">
-                    <div class="avatar"><img src="app-assets/images/icon/pdf-image.png" width="24" height="30"
-                            alt="sample image"></div>
+                    <div class="avatar"><img src="app-assets/images/icon/pdf-image.png" width="24"
+                            height="30" alt="sample image"></div>
                     <div class="member-info display-flex flex-column"><span class="black-text">Two new item
                             submitted</span><small class="grey-text">Marketing Manager</small></div>
                 </div>
@@ -148,8 +150,8 @@
     <li class="auto-suggestion"><a class="collection-item" href="#">
             <div class="display-flex">
                 <div class="display-flex align-item-center flex-grow-1">
-                    <div class="avatar"><img src="app-assets/images/icon/doc-image.png" width="24" height="30"
-                            alt="sample image"></div>
+                    <div class="avatar"><img src="app-assets/images/icon/doc-image.png" width="24"
+                            height="30" alt="sample image"></div>
                     <div class="member-info display-flex flex-column"><span class="black-text">52 Doc file
                             Generator</span><small class="grey-text">FontEnd Developer</small></div>
                 </div>
@@ -159,8 +161,8 @@
     <li class="auto-suggestion"><a class="collection-item" href="#">
             <div class="display-flex">
                 <div class="display-flex align-item-center flex-grow-1">
-                    <div class="avatar"><img src="app-assets/images/icon/xls-image.png" width="24" height="30"
-                            alt="sample image"></div>
+                    <div class="avatar"><img src="app-assets/images/icon/xls-image.png" width="24"
+                            height="30" alt="sample image"></div>
                     <div class="member-info display-flex flex-column"><span class="black-text">25 Xls File
                             Uploaded</span><small class="grey-text">Digital Marketing Manager</small></div>
                 </div>
@@ -170,8 +172,8 @@
     <li class="auto-suggestion"><a class="collection-item" href="#">
             <div class="display-flex">
                 <div class="display-flex align-item-center flex-grow-1">
-                    <div class="avatar"><img src="app-assets/images/icon/jpg-image.png" width="24" height="30"
-                            alt="sample image"></div>
+                    <div class="avatar"><img src="app-assets/images/icon/jpg-image.png" width="24"
+                            height="30" alt="sample image"></div>
                     <div class="member-info display-flex flex-column"><span class="black-text">Anna
                             Strong</span><small class="grey-text">Web Designer</small></div>
                 </div>
